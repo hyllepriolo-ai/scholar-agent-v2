@@ -3,7 +3,7 @@ uvicorn==0.29.0
 python-multipart==0.0.9
 cloudscraper==1.2.71
 beautifulsoup4==4.12.3
-ddgs==0.2.1
+ddgs
 scholarly==1.7.11
 PyMuPDF==1.24.1
 pandas==2.2.1
