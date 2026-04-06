@@ -1,6 +1,6 @@
 /**
- * Scholar Agent — 前端交互逻辑
- * 处理表单提交、文件上传拖放、SSE 流式进度展示、结果渲染
+ * 伯乐 — 前端交互逻辑
+ * 处理表单提交、文件上传拖放、SSE 流式进度展示、结果卡片渲染、汇总表格生成
  */
 
 // ================================================================
@@ -21,12 +21,21 @@ const progressLog = document.getElementById('progressLog');
 
 const resultsPanel = document.getElementById('resultsPanel');
 const resultsGrid = document.getElementById('resultsGrid');
+
+const summaryPanel = document.getElementById('summaryPanel');
+const summaryStats = document.getElementById('summaryStats');
+const summaryTableContainer = document.getElementById('summaryTableContainer');
 const exportButtons = document.getElementById('exportButtons');
 const downloadCsv = document.getElementById('downloadCsv');
 const downloadXlsx = document.getElementById('downloadXlsx');
 
 const errorPanel = document.getElementById('errorPanel');
 const errorMessage = document.getElementById('errorMessage');
+
+// ================================================================
+// 全局数据收集
+// ================================================================
+let allResults = [];
 
 // ================================================================
 // 文件上传拖放
@@ -101,6 +110,7 @@ searchForm.addEventListener('submit', async (e) => {
     showPanel('progress');
     clearProgress();
     clearResults();
+    allResults = [];
     
     // 构建 FormData
     const formData = new FormData();
@@ -181,23 +191,96 @@ function handleSSEEvent(event, data) {
         case 'result':
             showPanel('results');
             addResultCard(data);
+            allResults.push(data);
             break;
             
         case 'complete':
             progressBarFill.style.width = '100%';
             addProgressLog({ step: '完成', status: '完成', detail: `全部 ${data.total} 篇论文处理完毕` });
             
-            if (data.csv_file) {
-                exportButtons.style.display = 'flex';
-                downloadCsv.href = data.csv_file;
-                downloadXlsx.href = data.xlsx_file;
-            }
+            // 渲染汇总表格
+            renderSummaryTable(data);
             break;
             
         case 'error':
             showError(data.message);
             break;
     }
+}
+
+// ================================================================
+// 汇总表格渲染
+// ================================================================
+function renderSummaryTable(completeData) {
+    if (allResults.length === 0) return;
+    
+    // 统计
+    const corrHits = allResults.filter(r => r.通讯邮箱 && r.通讯邮箱 !== '未找到').length;
+    const firstHits = allResults.filter(r => r.一作邮箱 && r.一作邮箱 !== '未找到').length;
+    const total = allResults.length;
+    
+    summaryStats.innerHTML = `
+        <span class="stat">共 <span class="stat-value">${total}</span> 篇</span>
+        <span class="stat">通讯邮箱命中 <span class="stat-value">${corrHits}/${total}</span></span>
+        <span class="stat">一作邮箱命中 <span class="stat-value">${firstHits}/${total}</span></span>
+    `;
+    
+    // 下载链接
+    if (completeData.csv_file) {
+        downloadCsv.href = completeData.csv_file;
+        downloadXlsx.href = completeData.xlsx_file;
+        exportButtons.style.display = 'flex';
+    }
+    
+    // 构建表格
+    const emailCell = (email) => {
+        if (email && email !== '未找到') {
+            return `<a href="mailto:${email}">${email}</a>`;
+        }
+        return `<span class="not-found">未找到</span>`;
+    };
+    
+    const truncate = (str, len) => {
+        if (!str) return '';
+        return str.length > len ? str.substring(0, len) + '…' : str;
+    };
+    
+    let tableHTML = `
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th class="col-idx">#</th>
+                    <th class="col-doi">DOI</th>
+                    <th class="col-title">论文标题</th>
+                    <th>第一作者</th>
+                    <th class="col-email">一作邮箱</th>
+                    <th>通讯作者</th>
+                    <th class="col-email">通讯邮箱</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+    
+    allResults.forEach((r, i) => {
+        tableHTML += `
+            <tr>
+                <td class="col-idx">${i + 1}</td>
+                <td class="col-doi">${r.doi || ''}</td>
+                <td class="col-title">${truncate(r.标题, 50)}</td>
+                <td>${r.第一作者 || '—'}</td>
+                <td class="col-email">${emailCell(r.一作邮箱)}</td>
+                <td>${r.通讯作者 || '—'}</td>
+                <td class="col-email">${emailCell(r.通讯邮箱)}</td>
+            </tr>
+        `;
+    });
+    
+    tableHTML += '</tbody></table>';
+    summaryTableContainer.innerHTML = tableHTML;
+    
+    // 显示汇总面板
+    summaryPanel.style.display = 'block';
+    summaryPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ================================================================
@@ -229,10 +312,12 @@ function showError(msg) {
 function resetUI() {
     progressPanel.style.display = 'none';
     resultsPanel.style.display = 'none';
+    summaryPanel.style.display = 'none';
     errorPanel.style.display = 'none';
     exportButtons.style.display = 'none';
     clearProgress();
     clearResults();
+    allResults = [];
     doiInput.value = '';
     clearFile();
     setLoading(false);
@@ -246,6 +331,7 @@ function clearProgress() {
 
 function clearResults() {
     resultsGrid.innerHTML = '';
+    summaryTableContainer.innerHTML = '';
 }
 
 function addProgressLog(data) {
@@ -263,7 +349,12 @@ function addResultCard(data) {
     
     const emailHtml = (email, homepage) => {
         const isFound = email && email !== '未找到';
-        let html = `<div class="author-block-email ${isFound ? '' : 'not-found'}">${isFound ? email : '暂未找到'}</div>`;
+        let html = '';
+        if (isFound) {
+            html = `<div class="author-block-email"><a href="mailto:${email}">${email}</a></div>`;
+        } else {
+            html = `<div class="author-block-email not-found">暂未找到</div>`;
+        }
         if (homepage && homepage !== '未找到') {
             html += `<a class="author-block-link" href="${homepage}" target="_blank" rel="noopener">查看主页 →</a>`;
         }

@@ -30,6 +30,11 @@ def resolve_doi(doi: str) -> dict:
     result = _try_semantic_scholar(doi)
     if result and result.get("authors"):
         print(f"  ✅ Semantic Scholar 命中，标题: {result.get('title', '未知')[:60]}")
+        # 🔧 优化：S2 的 affiliations 经常为空，用 Crossref 补全缺失的机构信息
+        has_missing_affs = any(not a.get("affiliations") for a in result["authors"])
+        if has_missing_affs:
+            print(f"  🔄 检测到部分作者机构信息缺失，尝试用 Crossref 补全...")
+            result = _enrich_affiliations_from_crossref(doi, result)
         return result
 
     # 第二通道：Crossref（覆盖面更广）
@@ -40,6 +45,59 @@ def resolve_doi(doi: str) -> dict:
 
     print(f"  ❌ DOI {doi} 在所有数据源中均未找到")
     return {"title": "未获取", "journal": "未获取", "authors": [], "source": "none"}
+
+
+def _enrich_affiliations_from_crossref(doi: str, s2_result: dict) -> dict:
+    """用 Crossref 的机构数据补全 S2 返回中缺失的 affiliations"""
+    try:
+        url = f"https://api.crossref.org/works/{doi}"
+        resp = requests.get(url, timeout=HTTP_TIMEOUT)
+        if resp.status_code != 200:
+            return s2_result
+        
+        cr_authors = resp.json().get("message", {}).get("author", [])
+        if not cr_authors:
+            return s2_result
+        
+        # 构建 Crossref 作者名 → 机构 的映射（模糊匹配用 family name）
+        cr_aff_map = {}
+        for a in cr_authors:
+            family = (a.get("family") or "").strip().lower()
+            given = (a.get("given") or "").strip().lower()
+            full = f"{given} {family}".strip()
+            affs = [aff.get("name", "") for aff in a.get("affiliation", []) if aff.get("name")]
+            if affs:
+                cr_aff_map[full] = affs
+                if family:
+                    cr_aff_map[family] = affs
+        
+        # 补全 S2 中缺失的机构
+        enriched_count = 0
+        for author in s2_result["authors"]:
+            if author.get("affiliations"):
+                continue  # 已有机构信息，跳过
+            name_lower = author.get("name", "").strip().lower()
+            # 尝试全名匹配
+            if name_lower in cr_aff_map:
+                author["affiliations"] = cr_aff_map[name_lower]
+                enriched_count += 1
+                continue
+            # 尝试 family name 匹配（取名字的最后一个单词）
+            parts = name_lower.split()
+            if parts:
+                family = parts[-1]
+                if family in cr_aff_map:
+                    author["affiliations"] = cr_aff_map[family]
+                    enriched_count += 1
+        
+        if enriched_count:
+            print(f"  ✅ Crossref 补全了 {enriched_count} 位作者的机构信息")
+        else:
+            print(f"  ⚠️ Crossref 未能匹配到额外的机构信息")
+    except Exception as e:
+        print(f"  ⚠️ Crossref 机构补全异常: {e}")
+    
+    return s2_result
 
 
 def _try_semantic_scholar(doi: str) -> dict | None:

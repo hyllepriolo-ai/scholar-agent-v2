@@ -1,5 +1,5 @@
 """
-Scholar Agent V2 —— FastAPI 后端入口。
+伯乐 V3 —— FastAPI 后端入口。
 全栈一体架构：既提供 API 接口，又 serve 前端静态文件。
 """
 import os
@@ -27,7 +27,7 @@ from backend.services.email_finder import find_email, find_email_for_paper
 # ================================================================
 # FastAPI 应用初始化
 # ================================================================
-app = FastAPI(title="Scholar Agent", description="学术论文作者信息与邮箱智能挖掘系统")
+app = FastAPI(title="伯乐", description="学术联系人智能发现系统")
 
 # 前端静态文件目录（项目根目录下的 frontend/）
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -111,19 +111,27 @@ async def extract_from_input(
                 
                 corr_name = corr_author.get("姓名", "")
                 corr_org = corr_author.get("机构", "")
+                corr_homepage = corr_author.get("主页", "")
                 corr_email_data = {"邮箱": "未找到", "主页": "未找到", "谷歌学术": "未找到"}
                 if corr_name and corr_name != "未找到":
-                    corr_email_data = await asyncio.to_thread(find_email_for_paper, doi, corr_name, corr_org, "通讯")
+                    corr_email_data = await asyncio.to_thread(
+                        find_email_for_paper, doi, corr_name, corr_org, "通讯",
+                        corr_homepage, title
+                    )
                 
-                # 5. 搜索邮箱——第一作者
+                # 5. 搜索邮箱——第一作者（传入 homepage + paper_title 增强搜索）
                 yield sse_event("progress", {"step": "搜索邮箱", "status": "进行中", "detail": f"{prefix} 正在搜索第一作者邮箱..."})
                 await asyncio.sleep(1)  # 防限流
                 
                 first_name = first_author.get("姓名", "")
                 first_org = first_author.get("机构", "")
+                first_homepage = first_author.get("主页", "")
                 first_email_data = {"邮箱": "未找到", "主页": "未找到", "谷歌学术": "未找到"}
                 if first_name and first_name != "未找到":
-                    first_email_data = await asyncio.to_thread(find_email_for_paper, doi, first_name, first_org, "一作")
+                    first_email_data = await asyncio.to_thread(
+                        find_email_for_paper, doi, first_name, first_org, "一作",
+                        first_homepage, title
+                    )
                 
                 # 组装该 DOI 的结果
                 result = {

@@ -1,0 +1,42 @@
+
+============================================================
+[1/10] 10.1016/j.cell.2025.03.011
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.03.011
+  📡 [S2] 查询 Semantic Scholar...
+  ✅ Semantic Scholar 命中，标题: From geroscience to precision geromedicine: Understanding an
+  🔄 检测到部分作者机构信息缺失，尝试用 Crossref 补全...
+  ⚠️ Crossref 未能匹配到额外的机构信息
+  📋 作者识别完成:
+     第一作者: G. Kroemer (未找到)
+     通讯作者: Carlos López-Otín (未找到)
+  📄 标题: From geroscience to precision geromedicine: Understanding an
+  👤 一作: G. Kroemer | 机构: 未找到
+  👤 通讯: Carlos López-Otín | 机构: 未找到
+
+  📧 [V3.0] 开始追踪: Carlos López-Otín (未找到) [角色: corresponding]
+  🎯 [Step1] 抓取论文页面 (doi.org/10.1016/j.cell.2025.03.011)...
+  🔍 [Step2] 千问联网搜索 第1轮...
+  📬 [Step2] 第1轮候选邮箱: clo@uniovi.es
+  🏠 [Step2] 第1轮候选主页: https://www.uniovi.es/en/research/researchers/carlos-lopez-otin
+  🔄 [Step3] 千问联网搜索 第2轮 — 交叉验证...
+  ✅ [Step3] 验证通过: clo@uniovi.es
+  📧 最终结果: clo@uniovi.es (来源: qwen_search_verified, 置信度: 高)
+  📧 通讯: HIT clo@uniovi.es [置信度: 高]
+
+  📧 [V3.0] 开始追踪: G. Kroemer (未找到) [角色: 一作]
+  🎯 [Step1] 抓取论文页面 (doi.org/10.1016/j.cell.2025.03.011)...
+  🔍 [Step2] 千问联网搜索 第1轮...
+  🕵️ [Step4] 千问联网搜索 第3轮 — 深度搜索...
+  ✅ [Step4] 深度搜索命中: guido.kroemer@inserm.fr
+  📧 最终结果: guido.kroemer@inserm.fr (来源: qwen_search_verified, 置信度: 高)
+  📧 一作: HIT guido.kroemer@inserm.fr [置信度: 高]
+
+============================================================
+汇总结果
+============================================================
+通讯作者命中: 1/10 (高置信度: 1/10)
+第一作者命中: 1/10 (高置信度: 1/10)
+
+  025.03.011 | 通讯: HIT(高) clo@uniovi.es | 一作: HIT(高) guido.kroemer@inserm.fr
