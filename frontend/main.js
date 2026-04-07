@@ -373,13 +373,13 @@ function addResultCard(data) {
             <div class="author-block">
                 <div class="author-block-label">第一作者</div>
                 <div class="author-block-name">${data.第一作者 || '未知'}</div>
-                <div class="author-block-org">${data.一作机构 || ''}</div>
+                <div class="author-block-org">${(data.一作机构 && data.一作机构 !== '未找到') ? data.一作机构 : ''}</div>
                 ${emailHtml(data.一作邮箱, data.一作主页)}
             </div>
             <div class="author-block">
                 <div class="author-block-label">通讯作者</div>
                 <div class="author-block-name">${data.通讯作者 || '未知'}</div>
-                <div class="author-block-org">${data.通讯机构 || ''}</div>
+                <div class="author-block-org">${(data.通讯机构 && data.通讯机构 !== '未找到') ? data.通讯机构 : ''}</div>
                 ${emailHtml(data.通讯邮箱, data.通讯主页)}
             </div>
         </div>

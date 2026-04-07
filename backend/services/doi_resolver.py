@@ -59,36 +59,41 @@ def _enrich_affiliations_from_crossref(doi: str, s2_result: dict) -> dict:
         if not cr_authors:
             return s2_result
         
-        # 构建 Crossref 作者名 → 机构 的映射（模糊匹配用 family name）
+        # 构建 Crossref 作者名 → 映射字典
         cr_aff_map = {}
         for a in cr_authors:
             family = (a.get("family") or "").strip().lower()
             given = (a.get("given") or "").strip().lower()
             full = f"{given} {family}".strip()
             affs = [aff.get("name", "") for aff in a.get("affiliation", []) if aff.get("name")]
-            if affs:
-                cr_aff_map[full] = affs
+            orcid = a.get("ORCID", "")
+            if affs or orcid:
+                cr_aff_map[full] = {"affs": affs, "orcid": orcid}
                 if family:
-                    cr_aff_map[family] = affs
+                    cr_aff_map[family] = {"affs": affs, "orcid": orcid}
         
-        # 补全 S2 中缺失的机构
+        # 补全 S2 中缺失的机构和 ORCID
         enriched_count = 0
         for author in s2_result["authors"]:
-            if author.get("affiliations"):
-                continue  # 已有机构信息，跳过
             name_lower = author.get("name", "").strip().lower()
-            # 尝试全名匹配
+            
+            # 找到匹配的 Crossref 记录
+            found_cr = None
             if name_lower in cr_aff_map:
-                author["affiliations"] = cr_aff_map[name_lower]
-                enriched_count += 1
-                continue
-            # 尝试 family name 匹配（取名字的最后一个单词）
-            parts = name_lower.split()
-            if parts:
-                family = parts[-1]
-                if family in cr_aff_map:
-                    author["affiliations"] = cr_aff_map[family]
+                found_cr = cr_aff_map[name_lower]
+            else:
+                parts = name_lower.split()
+                if parts:
+                    family = parts[-1]
+                    if family in cr_aff_map:
+                        found_cr = cr_aff_map[family]
+            
+            if found_cr:
+                if not author.get("affiliations") and found_cr["affs"]:
+                    author["affiliations"] = found_cr["affs"]
                     enriched_count += 1
+                if found_cr["orcid"]:
+                    author["orcid"] = found_cr["orcid"]
         
         if enriched_count:
             print(f"  ✅ Crossref 补全了 {enriched_count} 位作者的机构信息")
@@ -107,7 +112,7 @@ def _try_semantic_scholar(doi: str) -> dict | None:
         paper_id = f"DOI:{doi}"
         url = (
             f"https://api.semanticscholar.org/graph/v1/paper/{paper_id}"
-            f"?fields=title,venue,authors,authors.name,authors.affiliations,authors.homepage"
+            f"?fields=title,venue,authors,authors.name,authors.affiliations,authors.homepage,authors.externalIds"
         )
         resp = requests.get(url, timeout=HTTP_TIMEOUT)
         time.sleep(API_RATE_LIMIT_DELAY)
@@ -121,6 +126,7 @@ def _try_semantic_scholar(doi: str) -> dict | None:
                         "name": a.get("name", ""),
                         "affiliations": a.get("affiliations", []) or [],
                         "homepage": a.get("homepage", ""),
+                        "orcid": a.get("externalIds", {}).get("ORCID", ""), # S2 中的 ORCID 存储在 externalIds
                         "is_corresponding": False  # S2 不直接标记，后续由 extractor 判断
                     })
                 return {
@@ -155,7 +161,7 @@ def _s2_fallback_by_title(doi: str) -> dict | None:
         s2_search_url = (
             f"https://api.semanticscholar.org/graph/v1/paper/search"
             f"?query={quote(title)}&limit=1"
-            f"&fields=title,venue,authors,authors.name,authors.affiliations,authors.homepage"
+            f"&fields=title,venue,authors,authors.name,authors.affiliations,authors.homepage,authors.externalIds"
         )
         s2_resp = requests.get(s2_search_url, timeout=HTTP_TIMEOUT)
         time.sleep(API_RATE_LIMIT_DELAY)
@@ -170,6 +176,7 @@ def _s2_fallback_by_title(doi: str) -> dict | None:
                         "name": a.get("name", ""),
                         "affiliations": a.get("affiliations", []) or [],
                         "homepage": a.get("homepage", ""),
+                        "orcid": a.get("externalIds", {}).get("ORCID", ""),
                         "is_corresponding": False
                     })
                 return {
@@ -213,6 +220,7 @@ def _try_crossref(doi: str) -> dict | None:
                     "name": name,
                     "affiliations": affs,
                     "homepage": "",
+                    "orcid": a.get("ORCID", ""),
                     "is_corresponding": a.get("sequence", "") == "additional"  # Crossref 约定
                 })
             

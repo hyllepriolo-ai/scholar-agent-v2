@@ -19,7 +19,7 @@ LLM_BASE_URL = os.environ.get(
     "https://dashscope.aliyuncs.com/compatible-mode/v1"
 )
 # 模型降级池：主力模型挂了自动轮换到备用
-LLM_MODEL_POOL = ["qwen-plus", "qwen-turbo"]
+LLM_MODEL_POOL = os.environ.get("LLM_MODEL_POOL", "qwen-plus,qwen-turbo").split(",")
 
 # ================================================================
 # 统一初始化 LLM 客户端（OpenAI 兼容协议）

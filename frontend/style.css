@@ -1,51 +1,55 @@
 /* ================================================================
-   伯乐 — 暖色学术风设计系统 (Warm Academic Design System)
+   伯乐 — 翡翠学术设计系统 (Emerald Academic Design System)
    ================================================================
-   配色：米白象牙底 + 深棕文字 + 墨绿强调色
-   风格：学术期刊 / 大学出版社 — 专业、温暖、典雅
+   配色主导：翡翠绿 #2b7859 为主色调（背景大面积绿）
+   面板白色浮层 + 暖文字 + 学术衬线体
+   参考 ui-ux-pro-max: Organic Biophilic + Academic Typography
    ================================================================ */
 
 /* ---------- Design Tokens ---------- */
 :root {
-    /* 背景色阶 */
-    --bg-deep: #F5F3EE;
-    --bg-base: #FAFAF5;
-    --bg-elevated: #FFFFFF;
-    --bg-surface: #F0EDE6;
+    /* 页面背景 — 绿色系为主 */
+    --bg-deep: #2b7859;
+    --bg-gradient: linear-gradient(160deg, #1E5C42 0%, #2b7859 40%, #34926B 100%);
 
-    /* 面板 */
+    /* 面板（白色浮层） */
     --panel-bg: #FFFFFF;
-    --panel-border: rgba(61, 43, 31, 0.1);
-    --panel-shadow: 0 1px 3px rgba(61, 43, 31, 0.06), 0 4px 16px rgba(61, 43, 31, 0.04);
-    --panel-shadow-hover: 0 2px 8px rgba(61, 43, 31, 0.08), 0 8px 24px rgba(61, 43, 31, 0.06);
+    --panel-bg-alt: #F5FBF8;
+    --panel-border: rgba(43, 120, 89, 0.12);
+    --panel-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 8px 32px rgba(0, 0, 0, 0.05);
+    --panel-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12), 0 12px 40px rgba(0, 0, 0, 0.08);
 
     /* 文字 */
-    --text-primary: #3D2B1F;
-    --text-secondary: #6B5B4E;
-    --text-tertiary: #9A8D82;
-    --text-accent: #2D5A4C;
+    --text-primary: #1A2E22;
+    --text-secondary: #3D5A47;
+    --text-tertiary: #6B8B75;
+    --text-accent: #2b7859;
+    --text-on-dark: #FFFFFF;
+    --text-on-dark-muted: rgba(255, 255, 255, 0.75);
 
     /* 强调色 */
-    --accent: #2D5A4C;
-    --accent-hover: #3A7363;
-    --accent-light: rgba(45, 90, 76, 0.08);
-    --accent-lighter: rgba(45, 90, 76, 0.04);
+    --accent: #2b7859;
+    --accent-hover: #238a62;
+    --accent-dark: #1E5C42;
+    --accent-darker: #164A34;
+    --accent-light: rgba(43, 120, 89, 0.12);
+    --accent-lighter: rgba(43, 120, 89, 0.06);
 
     /* 语义色 */
-    --success: #2D5A4C;
-    --error: #B54334;
-    --warning: #C4882F;
+    --success: #22C55E;
+    --error: #EF4444;
+    --warning: #F59E0B;
 
-    /* 圆角 */
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 14px;
-    --radius-xl: 18px;
+    /* 圆角 — Organic Biophilic 推荐 16-24px */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
 
-    /* 字体 */
+    /* 字体 — Academic Typography (Crimson Pro + Inter) */
     --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-serif: 'Noto Serif SC', 'Georgia', 'Times New Roman', serif;
-    --font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    --font-serif: 'Crimson Pro', 'Noto Serif SC', 'Georgia', 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
 
     /* 动画 */
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -70,7 +74,8 @@ html {
 
 body {
     font-family: var(--font);
-    background: var(--bg-deep);
+    background: var(--bg-gradient);
+    background-attachment: fixed;
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
@@ -82,7 +87,7 @@ body {
     position: relative;
     max-width: 860px;
     margin: 0 auto;
-    padding: 24px 20px;
+    padding: 0 20px 40px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -93,28 +98,30 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
-    margin-bottom: 36px;
-    border-bottom: 1px solid var(--panel-border);
+    padding: 28px 0 24px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
 .logo-icon {
-    width: 36px;
-    height: 36px;
-    background: var(--accent);
-    border-radius: var(--radius-sm);
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #FFFFFF;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
+    backdrop-filter: blur(8px);
 }
 
 .logo-text {
@@ -124,25 +131,26 @@ body {
 
 .logo-name {
     font-family: var(--font-serif);
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: 1px;
+    color: #FFFFFF;
+    letter-spacing: 1.5px;
     line-height: 1.2;
 }
 
 .logo-subtitle {
-    font-size: 11px;
-    color: var(--text-tertiary);
-    letter-spacing: 0.5px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.70);
+    letter-spacing: 0.8px;
+    margin-top: 2px;
 }
 
 .header-badge {
     font-size: 11px;
     font-weight: 500;
-    color: var(--text-secondary);
-    background: var(--bg-surface);
-    border: 1px solid var(--panel-border);
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 5px 14px;
     border-radius: 100px;
     letter-spacing: 0.3px;
@@ -153,16 +161,16 @@ body {
     flex: 1;
 }
 
-/* ---------- Panels ---------- */
+/* ---------- Panels (White Cards on Green Background) ---------- */
 .search-panel,
 .progress-panel,
 .results-panel,
 .summary-panel,
 .error-panel {
     background: var(--panel-bg);
-    border: 1px solid var(--panel-border);
+    border: none;
     border-radius: var(--radius-xl);
-    padding: 32px;
+    padding: 36px;
     margin-bottom: 24px;
     box-shadow: var(--panel-shadow);
     animation: fadeSlideUp var(--duration-slow) var(--ease-out) both;
@@ -171,7 +179,7 @@ body {
 @keyframes fadeSlideUp {
     from {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(16px);
     }
     to {
         opacity: 1;
@@ -181,40 +189,41 @@ body {
 
 .panel-title {
     font-family: var(--font-serif);
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: 0.3px;
-    margin-bottom: 8px;
-    color: var(--text-primary);
+    margin-bottom: 10px;
+    color: var(--accent);
 }
 
 .panel-desc {
     font-size: 14px;
     color: var(--text-secondary);
-    margin-bottom: 24px;
-    line-height: 1.6;
+    margin-bottom: 28px;
+    line-height: 1.7;
 }
 
 /* ---------- Search Form ---------- */
 .search-form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
 }
 
 .glass-input {
     width: 100%;
-    background: var(--bg-surface);
-    border: 1px solid var(--panel-border);
+    background: #F5FBF8;
+    border: 1.5px solid rgba(43, 120, 89, 0.15);
     border-radius: var(--radius-md);
-    padding: 14px 16px;
+    padding: 16px 18px;
     color: var(--text-primary);
     font-family: var(--font);
     font-size: 14px;
     line-height: 1.6;
     resize: vertical;
     transition: border-color var(--duration-normal) var(--ease-out),
-                box-shadow var(--duration-normal) var(--ease-out);
+                box-shadow var(--duration-normal) var(--ease-out),
+                background var(--duration-normal) var(--ease-out);
     outline: none;
 }
 
@@ -224,24 +233,26 @@ body {
 
 .glass-input:focus {
     border-color: var(--accent);
+    background: #FFFFFF;
     box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 /* ---------- File Upload ---------- */
 .file-upload-area {
-    border: 1.5px dashed rgba(61, 43, 31, 0.2);
+    border: 2px dashed rgba(43, 120, 89, 0.25);
     border-radius: var(--radius-md);
-    padding: 24px;
+    padding: 28px;
     text-align: center;
     cursor: pointer;
     transition: all var(--duration-normal) var(--ease-out);
-    background: var(--bg-base);
+    background: #F5FBF8;
 }
 
 .file-upload-area:hover,
 .file-upload-area.drag-over {
     border-color: var(--accent);
-    background: var(--accent-lighter);
+    background: rgba(43, 120, 89, 0.06);
+    transform: translateY(-1px);
 }
 
 .upload-content {
@@ -254,7 +265,8 @@ body {
 }
 
 .upload-content svg {
-    color: var(--text-tertiary);
+    color: var(--accent);
+    opacity: 0.6;
 }
 
 .upload-content em {
@@ -262,7 +274,7 @@ body {
     font-style: normal;
     cursor: pointer;
     text-decoration: underline;
-    text-underline-offset: 2px;
+    text-underline-offset: 3px;
 }
 
 .upload-content small {
@@ -282,7 +294,7 @@ body {
 /* ---------- Buttons ---------- */
 .submit-btn {
     width: 100%;
-    padding: 14px;
+    padding: 16px;
     background: var(--accent);
     color: #FFFFFF;
     border: none;
@@ -294,12 +306,13 @@ body {
     transition: all var(--duration-normal) var(--ease-out);
     position: relative;
     overflow: hidden;
+    letter-spacing: 0.3px;
 }
 
 .submit-btn:hover:not(:disabled) {
     background: var(--accent-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(45, 90, 76, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(43, 120, 89, 0.35);
 }
 
 .submit-btn:active:not(:disabled) {
@@ -337,8 +350,9 @@ body {
 
 .progress-header h2 {
     font-family: var(--font-serif);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
+    color: var(--accent);
 }
 
 .progress-count {
@@ -349,8 +363,8 @@ body {
 
 .progress-bar-track {
     width: 100%;
-    height: 4px;
-    background: var(--bg-surface);
+    height: 6px;
+    background: rgba(43, 120, 89, 0.10);
     border-radius: 100px;
     overflow: hidden;
     margin-bottom: 16px;
@@ -358,7 +372,7 @@ body {
 
 .progress-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent), #4A8B7A);
+    background: linear-gradient(90deg, var(--accent), #4CD695);
     border-radius: 100px;
     transition: width var(--duration-slow) var(--ease-out);
 }
@@ -380,7 +394,7 @@ body {
 }
 
 .progress-log::-webkit-scrollbar-thumb {
-    background: rgba(61, 43, 31, 0.15);
+    background: rgba(43, 120, 89, 0.20);
     border-radius: 100px;
 }
 
@@ -426,8 +440,9 @@ body {
 
 .results-header h2 {
     font-family: var(--font-serif);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
+    color: var(--accent);
 }
 
 .results-grid {
@@ -437,7 +452,7 @@ body {
 }
 
 .result-card {
-    background: var(--bg-base);
+    background: var(--panel-bg-alt);
     border: 1px solid var(--panel-border);
     border-radius: var(--radius-lg);
     padding: 24px;
@@ -489,9 +504,10 @@ body {
 }
 
 .author-block {
-    background: var(--bg-surface);
+    background: #F0F9F4;
     border-radius: var(--radius-md);
     padding: 16px;
+    border-left: 3px solid var(--accent);
 }
 
 .author-block-label {
@@ -499,7 +515,7 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    color: var(--text-tertiary);
+    color: var(--accent);
     margin-bottom: 10px;
 }
 
@@ -567,8 +583,9 @@ body {
 
 .summary-header h2 {
     font-family: var(--font-serif);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
+    color: var(--accent);
 }
 
 .summary-stats {
@@ -598,7 +615,7 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 8px 16px;
+    padding: 10px 18px;
     background: var(--accent);
     border: none;
     border-radius: var(--radius-sm);
@@ -613,7 +630,7 @@ body {
 .export-btn:hover {
     background: var(--accent-hover);
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(45, 90, 76, 0.2);
+    box-shadow: 0 4px 12px rgba(43, 120, 89, 0.30);
 }
 
 .export-btn svg {
@@ -629,15 +646,15 @@ body {
 }
 
 .summary-table thead th {
-    background: var(--bg-surface);
-    color: var(--text-secondary);
+    background: #EFF8F3;
+    color: var(--accent);
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 10px 14px;
+    padding: 12px 14px;
     text-align: left;
-    border-bottom: 2px solid var(--panel-border);
+    border-bottom: 2px solid rgba(43, 120, 89, 0.15);
     white-space: nowrap;
     position: sticky;
     top: 0;
@@ -656,11 +673,11 @@ body {
 }
 
 .summary-table tbody tr:nth-child(even) {
-    background: var(--bg-base);
+    background: #FAFDFB;
 }
 
 .summary-table tbody tr:hover {
-    background: var(--accent-lighter);
+    background: rgba(43, 120, 89, 0.04);
 }
 
 .summary-table tbody td {
@@ -713,7 +730,7 @@ body {
 
 /* ---------- Error Panel ---------- */
 .error-panel {
-    border-color: rgba(181, 67, 52, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
 .error-content {
@@ -734,8 +751,8 @@ body {
 }
 
 .retry-btn {
-    padding: 8px 20px;
-    background: var(--bg-surface);
+    padding: 10px 24px;
+    background: #FFFFFF;
     border: 1px solid var(--panel-border);
     border-radius: var(--radius-sm);
     color: var(--text-primary);
@@ -753,30 +770,35 @@ body {
 /* ---------- Footer ---------- */
 .app-footer {
     text-align: center;
-    padding: 24px 0 16px;
+    padding: 20px 0;
     font-size: 11px;
-    color: var(--text-tertiary);
+    color: rgba(255, 255, 255, 0.55);
     letter-spacing: 0.3px;
-    border-top: 1px solid var(--panel-border);
-    margin-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    margin-top: auto;
 }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
     .app-container {
-        padding: 16px;
+        padding: 0 16px 24px;
+    }
+
+    .app-header {
+        padding: 20px 0 16px;
+        margin-bottom: 24px;
     }
 
     .search-panel,
     .progress-panel,
     .results-panel,
     .summary-panel {
-        padding: 20px;
+        padding: 24px;
         border-radius: var(--radius-lg);
     }
 
     .panel-title {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .summary-header {
@@ -788,5 +810,9 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
+    }
+
+    .logo-name {
+        font-size: 22px;
     }
 }
