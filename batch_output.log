@@ -1,0 +1,343 @@
+
+============================================================
+[1/10] 10.1016/j.cell.2025.11.002
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.11.002
+  📡 [EuropePMC] 查询 EuropePMC API...
+  📧 [EuropePMC] 从机构字段提取到邮箱: thirumala-devi.kanneganti@stjude.org (Thirumala-Devi Kanneganti)
+  ✅ EuropePMC 命中，标题: Innate immune and metabolic signals induce mitochondria-depe
+  📋 作者识别完成:
+     第一作者: Yaqiu Wang (Department of Immunology, St. Jude Children's Research Hospital, Memphis, TN 38105, USA)
+     通讯作者: Thirumala-Devi Kanneganti (Department of Immunology, St. Jude Children's Research Hospital, Memphis, TN 38105, USA)
+  📄 标题: Innate immune and metabolic signals induce mitochondria-depe
+  👤 一作: Yaqiu Wang | 机构: Department of Immunology, St. Jude Child
+  👤 通讯: Thirumala-Devi Kanneganti | 机构: Department of Immunology, St. Jude Child
+
+  📧 [V4.0 信任链] 开始追踪: Thirumala-Devi Kanneganti (Department of Immunology, St. Jude Children's Research Hospital, Memphis, TN 38105, USA) [角色: corresponding]
+  📋 [Layer2] Crossref 元数据邮箱: thirumala-devi.kanneganti@stjude.org
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 110)
+    💾 缓存机构域名: department of immunology, st. ... → stjude.org
+  📧 通讯: HIT thirumala-devi.kanneganti@stjude.org [置信度: 高]
+
+  📧 [V4.0 信任链] 开始追踪: Yaqiu Wang (Department of Immunology, St. Jude Children's Research Hospital, Memphis, TN 38105, USA) [角色: 一作]
+  🎯 [Layer3] 论文页面抓取 (doi.org/10.1016/j.cell.2025.11.002)...
+  🔄 [Layer5] 同机构推断（利用通讯作者信息）...
+  🧭 [Layer6] LLM 两阶段搜索...
+    🧭 [Phase1] LLM 导航模式 - 搜索含邮箱的页面 URL...
+    ⚠️ [Phase1] LLM 未返回有效 URL
+    🔄 [Phase2] Phase1 未命中，启动直搜兜底模式...
+    ⚠️ [Phase2] LLM 回答未找到或为空
+  ❌ 所有层级均未找到可信邮箱
+  📧 一作: MISS 未找到 [置信度: 无]
+
+============================================================
+[2/10] 10.1016/j.cell.2025.09.029
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.09.029
+  📡 [EuropePMC] 查询 EuropePMC API...
+  📧 [EuropePMC] 从机构字段提取到邮箱: zhang.chenping@hotmail.com (Chenping Zhang)
+  📧 [EuropePMC] 从机构字段提取到邮箱: yunfan_sun@msn.com (Yunfan Sun)
+  📧 [EuropePMC] 从机构字段提取到邮箱: zhou.jian@zs-hospital.sh.cn (Jian Zhou)
+  📧 [EuropePMC] 从机构字段提取到邮箱: fan.jia@zs-hospital.sh.cn (Jia Fan)
+  📧 [EuropePMC] 从机构字段提取到邮箱: jitong_zsyy@fudan.edu.cn (Tong Ji)
+  ✅ EuropePMC 命中，标题: Cancer cells co-opt an inter-organ neuroimmune circuit to es
+  ⚠️ 发现超大型协作论文（25 位作者），启动智能通讯作者识别...
+  📋 作者识别完成:
+     第一作者: Yu Zhang (Department of Oral and Maxillofacial Surgery, Zhongshan Hospital, Fudan University, Shanghai 200032, China; Department of Hepatobiliary Surgery and Liver Transplantation, Liver Cancer Institute, Zhongshan Hospital, Fudan University, Key Laboratory of Carcinogenesis and Cancer Invasion, Ministry of Education, Shanghai 200032, China; Department of Stomatology, Zhongshan Hospital, Fudan University, Shanghai 200032, China)
+     通讯作者: Chenping Zhang (Department of Oral and Maxillofacial-Head and Neck Oncology, Shanghai Ninth People's Hospital, Shanghai Jiao Tong University School of Medicine, College of Stomatology, Shanghai Jiao Tong University, National Center for Stomatology, National Clinical Research Center for Oral Diseases, Shanghai Key Laboratory of Stomatology, Shanghai 200011, China)
+  📄 标题: Cancer cells co-opt an inter-organ neuroimmune circuit to es
+  👤 一作: Yu Zhang | 机构: Department of Oral and Maxillofacial Sur
+  👤 通讯: Chenping Zhang | 机构: Department of Oral and Maxillofacial-Hea
+
+  📧 [V4.0 信任链] 开始追踪: Chenping Zhang (Department of Oral and Maxillofacial-Head and Neck Oncology, Shanghai Ninth People's Hospital, Shanghai Jiao Tong University School of Medicine, College of Stomatology, Shanghai Jiao Tong University, National Center for Stomatology, National Clinical Research Center for Oral Diseases, Shanghai Key Laboratory of Stomatology, Shanghai 200011, China) [角色: corresponding]
+  📋 [Layer2] Crossref 元数据邮箱: zhang.chenping@hotmail.com
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 100)
+  📧 通讯: HIT zhang.chenping@hotmail.com [置信度: 高]
+
+  📧 [V4.0 信任链] 开始追踪: Yu Zhang (Department of Oral and Maxillofacial Surgery, Zhongshan Hospital, Fudan University, Shanghai 200032, China; Department of Hepatobiliary Surgery and Liver Transplantation, Liver Cancer Institute, Zhongshan Hospital, Fudan University, Key Laboratory of Carcinogenesis and Cancer Invasion, Ministry of Education, Shanghai 200032, China; Department of Stomatology, Zhongshan Hospital, Fudan University, Shanghai 200032, China) [角色: 一作]
+  🎯 [Layer3] 论文页面抓取 (doi.org/10.1016/j.cell.2025.09.029)...
+  🔄 [Layer5] 同机构推断（利用通讯作者信息）...
+  🧭 [Layer6] LLM 两阶段搜索...
+    🧭 [Phase1] LLM 导航模式 - 搜索含邮箱的页面 URL...
+    ⚠️ [Phase1] LLM 未返回有效 URL
+    🔄 [Phase2] Phase1 未命中，启动直搜兜底模式...
+    ⚠️ [Phase2] LLM 回答未找到或为空
+  ❌ 所有层级均未找到可信邮箱
+  📧 一作: MISS 未找到 [置信度: 无]
+
+============================================================
+[3/10] 10.1016/j.cell.2025.06.047
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.06.047
+  📡 [EuropePMC] 查询 EuropePMC API...
+  📧 [EuropePMC] 从机构字段提取到邮箱: doctoryjy@scu.edu.cn (Jiayin Yang)
+  📧 [EuropePMC] 从机构字段提取到邮箱: qujing@ioz.ac.cn (Jing Qu)
+  📧 [EuropePMC] 从机构字段提取到邮箱: zhangwq@big.ac.cn (Weiqi Zhang)
+  📧 [EuropePMC] 从机构字段提取到邮箱: ghliu@ioz.ac.cn (Guang-Hui Liu)
+  ✅ EuropePMC 命中，标题: Comprehensive human proteome profiles across a 50-year lifes
+  ⚠️ 发现超大型协作论文（24 位作者），启动智能通讯作者识别...
+  📋 作者识别完成:
+     第一作者: Yingjie Ding (China National Center for Bioinformation and Beijing Institute of Genomics, Chinese Academy of Sciences, Beijing 100101, China; University of Chinese Academy of Sciences, Beijing 100049, China)
+     通讯作者: Jiayin Yang (Liver Transplant Center, Organ Transplant Center, West China Hospital of Sichuan University, Chengdu 610000, China; Laboratory of Liver Transplantation, Key Laboratory of Transplant Engineering and Immunology, NHC, West China Hospital of Sichuan University, Chengdu 610000, China)
+  📄 标题: Comprehensive human proteome profiles across a 50-year lifes
+  👤 一作: Yingjie Ding | 机构: China National Center for Bioinformation
+  👤 通讯: Jiayin Yang | 机构: Liver Transplant Center, Organ Transplan
+
+  📧 [V4.0 信任链] 开始追踪: Jiayin Yang (Liver Transplant Center, Organ Transplant Center, West China Hospital of Sichuan University, Chengdu 610000, China; Laboratory of Liver Transplantation, Key Laboratory of Transplant Engineering and Immunology, NHC, West China Hospital of Sichuan University, Chengdu 610000, China) [角色: corresponding]
+  📋 [Layer2] Crossref 元数据邮箱: doctoryjy@scu.edu.cn
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 90)
+    💾 缓存机构域名: liver transplant center, organ... → scu.edu.cn
+  📧 通讯: HIT doctoryjy@scu.edu.cn [置信度: 高]
+
+  📧 [V4.0 信任链] 开始追踪: Yingjie Ding (China National Center for Bioinformation and Beijing Institute of Genomics, Chinese Academy of Sciences, Beijing 100101, China; University of Chinese Academy of Sciences, Beijing 100049, China) [角色: 一作]
+  🎯 [Layer3] 论文页面抓取 (doi.org/10.1016/j.cell.2025.06.047)...
+  🔄 [Layer5] 同机构推断（利用通讯作者信息）...
+  🧭 [Layer6] LLM 两阶段搜索...
+    🧭 [Phase1] LLM 导航模式 - 搜索含邮箱的页面 URL...
+    ⚠️ [Phase1] LLM 未返回有效 URL
+    🔄 [Phase2] Phase1 未命中，启动直搜兜底模式...
+    ⚠️ [Phase2] LLM 回答未找到或为空
+  ❌ 所有层级均未找到可信邮箱
+  📧 一作: MISS 未找到 [置信度: 无]
+
+============================================================
+[4/10] 10.1016/j.cell.2025.05.021
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.05.021
+  📡 [EuropePMC] 查询 EuropePMC API...
+  📧 [EuropePMC] 从机构字段提取到邮箱: qujing@ioz.ac.cn (Jing Qu)
+  📧 [EuropePMC] 从机构字段提取到邮箱: wangsi@xwh.ccmu.edu.cn (Si Wang)
+  📧 [EuropePMC] 从机构字段提取到邮箱: ghliu@ioz.ac.cn (Guang-Hui Liu)
+  ✅ EuropePMC 命中，标题: Senescence-resistant human mesenchymal progenitor cells coun
+  ⚠️ 发现超大型协作论文（59 位作者），启动智能通讯作者识别...
+  📋 作者识别完成:
+     第一作者: Jinghui Lei (Advanced Innovation Center for Human Brain Protection, National Clinical Research Center for Geriatric Disorders, Aging Translational Medicine Center, Beijing Municipal Geriatric Medical Research Center, Beijing Key Laboratory of Environment and Aging, Xuanwu Hospital Capital Medical University, Beijing 100053, China)
+     通讯作者: Jing Qu (State Key Laboratory of Organ Regeneration and Reconstruction, Institute of Zoology, Chinese Academy of Sciences, Beijing 100101, China; Beijing Institute for Stem Cell and Regenerative Medicine, Beijing 100101, China; Beijing Institute of Heart, Lung and Blood Vessel Diseases, Beijing Anzhen Hospital, Capital Medical University, Beijing 100029, China; University of Chinese Academy of Sciences, Beijing 100049, China; Aging Biomarker Consortium (ABC), Beijing 100101, China)
+  📄 标题: Senescence-resistant human mesenchymal progenitor cells coun
+  👤 一作: Jinghui Lei | 机构: Advanced Innovation Center for Human Bra
+  👤 通讯: Jing Qu | 机构: State Key Laboratory of Organ Regenerati
+
+  📧 [V4.0 信任链] 开始追踪: Jing Qu (State Key Laboratory of Organ Regeneration and Reconstruction, Institute of Zoology, Chinese Academy of Sciences, Beijing 100101, China; Beijing Institute for Stem Cell and Regenerative Medicine, Beijing 100101, China; Beijing Institute of Heart, Lung and Blood Vessel Diseases, Beijing Anzhen Hospital, Capital Medical University, Beijing 100029, China; University of Chinese Academy of Sciences, Beijing 100049, China; Aging Biomarker Consortium (ABC), Beijing 100101, China) [角色: corresponding]
+  📋 [Layer2] Crossref 元数据邮箱: qujing@ioz.ac.cn
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 100)
+    💾 缓存机构域名: state key laboratory of organ ... → ioz.ac.cn
+  📧 通讯: HIT qujing@ioz.ac.cn [置信度: 高]
+
+  📧 [V4.0 信任链] 开始追踪: Jinghui Lei (Advanced Innovation Center for Human Brain Protection, National Clinical Research Center for Geriatric Disorders, Aging Translational Medicine Center, Beijing Municipal Geriatric Medical Research Center, Beijing Key Laboratory of Environment and Aging, Xuanwu Hospital Capital Medical University, Beijing 100053, China) [角色: 一作]
+  🎯 [Layer3] 论文页面抓取 (doi.org/10.1016/j.cell.2025.05.021)...
+  🔄 [Layer5] 同机构推断（利用通讯作者信息）...
+  🧭 [Layer6] LLM 两阶段搜索...
+    🧭 [Phase1] LLM 导航模式 - 搜索含邮箱的页面 URL...
+    ⚠️ [Phase1] LLM 未返回有效 URL
+    🔄 [Phase2] Phase1 未命中，启动直搜兜底模式...
+    ⚠️ [Phase2] LLM 回答未找到或为空
+  ❌ 所有层级均未找到可信邮箱
+  📧 一作: MISS 未找到 [置信度: 无]
+
+============================================================
+[5/10] 10.1016/j.cell.2025.06.001
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.06.001
+  📡 [EuropePMC] 查询 EuropePMC API...
+  📧 [EuropePMC] 从机构字段提取到邮箱: wangsi@xwh.ccmu.edu.cn (Si Wang)
+  📧 [EuropePMC] 从机构字段提取到邮箱: songmoshi@ioz.ac.cn (Moshi Song)
+  📧 [EuropePMC] 从机构字段提取到邮箱: zhangwq@big.ac.cn (Weiqi Zhang)
+  📧 [EuropePMC] 从机构字段提取到邮箱: qujing@ioz.ac.cn (Jing Qu)
+  📧 [EuropePMC] 从机构字段提取到邮箱: ghliu@ioz.ac.cn (Guang-Hui Liu)
+  ✅ EuropePMC 命中，标题: Systematic profiling reveals betaine as an exercise mimetic 
+  ⚠️ 发现超大型协作论文（69 位作者），启动智能通讯作者识别...
+  📋 作者识别完成:
+     第一作者: Lingling Geng (Advanced Innovation Center for Human Brain Protection, National Clinical Research Center for Geriatric Disorders, Aging Translational Medicine Center, Beijing Municipal Geriatric Medical Research Center, Beijing Key Laboratory of Environment and Aging, Xuanwu Hospital Capital Medical University, Beijing 100053, China)
+     通讯作者: Si Wang (Advanced Innovation Center for Human Brain Protection, National Clinical Research Center for Geriatric Disorders, Aging Translational Medicine Center, Beijing Municipal Geriatric Medical Research Center, Beijing Key Laboratory of Environment and Aging, Xuanwu Hospital Capital Medical University, Beijing 100053, China; Aging Biomarker Consortium (ABC), Beijing 100101, China)
+  📄 标题: Systematic profiling reveals betaine as an exercise mimetic 
+  👤 一作: Lingling Geng | 机构: Advanced Innovation Center for Human Bra
+  👤 通讯: Si Wang | 机构: Advanced Innovation Center for Human Bra
+
+  📧 [V4.0 信任链] 开始追踪: Si Wang (Advanced Innovation Center for Human Brain Protection, National Clinical Research Center for Geriatric Disorders, Aging Translational Medicine Center, Beijing Municipal Geriatric Medical Research Center, Beijing Key Laboratory of Environment and Aging, Xuanwu Hospital Capital Medical University, Beijing 100053, China; Aging Biomarker Consortium (ABC), Beijing 100101, China) [角色: corresponding]
+  📋 [Layer2] Crossref 元数据邮箱: wangsi@xwh.ccmu.edu.cn
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 100)
+    💾 缓存机构域名: advanced innovation center for... → xwh.ccmu.edu.cn
+  📧 通讯: HIT wangsi@xwh.ccmu.edu.cn [置信度: 高]
+
+  📧 [V4.0 信任链] 开始追踪: Lingling Geng (Advanced Innovation Center for Human Brain Protection, National Clinical Research Center for Geriatric Disorders, Aging Translational Medicine Center, Beijing Municipal Geriatric Medical Research Center, Beijing Key Laboratory of Environment and Aging, Xuanwu Hospital Capital Medical University, Beijing 100053, China) [角色: 一作]
+  🔗 [Layer1] ORCID API 查询...
+    🔗 [ORCID] 查询 0009-0001-0273-9920...
+    🏛️ [ORCID] 无邮箱/链接，但有机构: Xuan Wu Hospital of the Capital Medical University
+  🎯 [Layer3] 论文页面抓取 (doi.org/10.1016/j.cell.2025.06.001)...
+  🔄 [Layer5] 同机构推断（利用通讯作者信息）...
+  🧭 [Layer6] LLM 两阶段搜索...
+    🧭 [Phase1] LLM 导航模式 - 搜索含邮箱的页面 URL...
+    ⚠️ [Phase1] LLM 未返回有效 URL
+    🔄 [Phase2] Phase1 未命中，启动直搜兜底模式...
+    ⚠️ [Phase2] LLM 回答未找到或为空
+  ❌ 所有层级均未找到可信邮箱
+  📧 一作: MISS 未找到 [置信度: 无]
+
+============================================================
+[6/10] 10.1016/j.cell.2025.03.011
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.03.011
+  📡 [EuropePMC] 查询 EuropePMC API...
+  📧 [EuropePMC] 从机构字段提取到邮箱: kroemer@orange.fr (Guido Kroemer)
+  📧 [EuropePMC] 从机构字段提取到邮箱: clo@uniovi.es (Carlos López-Otín)
+  ✅ EuropePMC 命中，标题: From geroscience to precision geromedicine: Understanding an
+  📋 作者识别完成:
+     第一作者: Guido Kroemer (Centre de Recherche des Cordeliers, Equipe labellisée par la Ligue contre le cancer, Inserm U1138, Université Paris Cité, Sorbonne Université, Paris, France; Metabolomics and Cell Biology Platforms, Gustave Roussy Institut, Villejuif, France; Institut du Cancer Paris CARPEM, Department of Biology, Hôpital Européen Georges Pompidou, AP-HP, Paris, France)
+     通讯作者: Guido Kroemer (Centre de Recherche des Cordeliers, Equipe labellisée par la Ligue contre le cancer, Inserm U1138, Université Paris Cité, Sorbonne Université, Paris, France; Metabolomics and Cell Biology Platforms, Gustave Roussy Institut, Villejuif, France; Institut du Cancer Paris CARPEM, Department of Biology, Hôpital Européen Georges Pompidou, AP-HP, Paris, France)
+  📄 标题: From geroscience to precision geromedicine: Understanding an
+  👤 一作: Guido Kroemer | 机构: Centre de Recherche des Cordeliers, Equi
+  👤 通讯: Guido Kroemer | 机构: Centre de Recherche des Cordeliers, Equi
+
+  📧 [V4.0 信任链] 开始追踪: Guido Kroemer (Centre de Recherche des Cordeliers, Equipe labellisée par la Ligue contre le cancer, Inserm U1138, Université Paris Cité, Sorbonne Université, Paris, France; Metabolomics and Cell Biology Platforms, Gustave Roussy Institut, Villejuif, France; Institut du Cancer Paris CARPEM, Department of Biology, Hôpital Européen Georges Pompidou, AP-HP, Paris, France) [角色: corresponding]
+  🔗 [Layer1] ORCID API 查询...
+    🔗 [ORCID] 查询 0000-0002-9334-4405...
+    ⚠️ [ORCID] 0000-0002-9334-4405 信息极少（可能未公开）
+  📋 [Layer2] Crossref 元数据邮箱: kroemer@orange.fr
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 90)
+  📧 通讯: HIT kroemer@orange.fr [置信度: 高]
+
+  📧 [V4.0 信任链] 开始追踪: Guido Kroemer (Centre de Recherche des Cordeliers, Equipe labellisée par la Ligue contre le cancer, Inserm U1138, Université Paris Cité, Sorbonne Université, Paris, France; Metabolomics and Cell Biology Platforms, Gustave Roussy Institut, Villejuif, France; Institut du Cancer Paris CARPEM, Department of Biology, Hôpital Européen Georges Pompidou, AP-HP, Paris, France) [角色: 一作]
+  🔗 [Layer1] ORCID API 查询...
+    🔗 [ORCID] 查询 0000-0002-9334-4405...
+    ⚠️ [ORCID] 0000-0002-9334-4405 信息极少（可能未公开）
+  📋 [Layer2] Crossref 元数据邮箱: kroemer@orange.fr
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 90)
+  📧 一作: HIT kroemer@orange.fr [置信度: 高]
+
+============================================================
+[7/10] 10.1016/j.cell.2025.04.032
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.04.032
+  📡 [EuropePMC] 查询 EuropePMC API...
+  📧 [EuropePMC] 从机构字段提取到邮箱: bo.li@ucla.edu (Bo Li)
+  📧 [EuropePMC] 从机构字段提取到邮箱: liliyang@ucla.edu (Lili Yang)
+  ✅ EuropePMC 命中，标题: Serotonin transporter inhibits antitumor immunity through re
+  📋 作者识别完成:
+     第一作者: Bo Li (Department of Microbiology, Immunology and Molecular Genetics, University of California, Los Angeles, Los Angeles, CA 90095, USA)
+     通讯作者: Bo Li (Department of Microbiology, Immunology and Molecular Genetics, University of California, Los Angeles, Los Angeles, CA 90095, USA)
+  📄 标题: Serotonin transporter inhibits antitumor immunity through re
+  👤 一作: Bo Li | 机构: Department of Microbiology, Immunology a
+  👤 通讯: Bo Li | 机构: Department of Microbiology, Immunology a
+
+  📧 [V4.0 信任链] 开始追踪: Bo Li (Department of Microbiology, Immunology and Molecular Genetics, University of California, Los Angeles, Los Angeles, CA 90095, USA) [角色: corresponding]
+  📋 [Layer2] Crossref 元数据邮箱: bo.li@ucla.edu
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 100)
+    💾 缓存机构域名: department of microbiology, im... → ucla.edu
+  📧 通讯: HIT bo.li@ucla.edu [置信度: 高]
+
+  📧 [V4.0 信任链] 开始追踪: Bo Li (Department of Microbiology, Immunology and Molecular Genetics, University of California, Los Angeles, Los Angeles, CA 90095, USA) [角色: 一作]
+  📋 [Layer2] Crossref 元数据邮箱: bo.li@ucla.edu
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 110)
+    💾 缓存机构域名: department of microbiology, im... → ucla.edu
+  📧 一作: HIT bo.li@ucla.edu [置信度: 高]
+
+============================================================
+[8/10] 10.1016/j.cell.2025.12.049
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.12.049
+  📡 [EuropePMC] 查询 EuropePMC API...
+  📧 [EuropePMC] 从机构字段提取到邮箱: douglas.hanahan@epfl.ch (Douglas Hanahan)
+  ✅ EuropePMC 命中，标题: Hallmarks of cancer-Then and now, and beyond.
+  📋 作者识别完成:
+     第一作者: Douglas Hanahan (Ludwig Institute for Cancer Research, Lausanne Branch, 1011 Lausanne, Switzerland; Swiss Institute for Experimental Cancer Research (ISREC) at EPFL, 1011 Lausanne, Switzerland; Swiss Cancer Center Leman (SCCL), Rue du Bugnon 25A, 1011 Lausanne, Switzerland; Agora Translational Cancer Research Center, 1011 Lausanne, Switzerland)
+     通讯作者: Douglas Hanahan (Ludwig Institute for Cancer Research, Lausanne Branch, 1011 Lausanne, Switzerland; Swiss Institute for Experimental Cancer Research (ISREC) at EPFL, 1011 Lausanne, Switzerland; Swiss Cancer Center Leman (SCCL), Rue du Bugnon 25A, 1011 Lausanne, Switzerland; Agora Translational Cancer Research Center, 1011 Lausanne, Switzerland)
+  📄 标题: Hallmarks of cancer-Then and now, and beyond.
+  👤 一作: Douglas Hanahan | 机构: Ludwig Institute for Cancer Research, La
+  👤 通讯: Douglas Hanahan | 机构: Ludwig Institute for Cancer Research, La
+
+  📧 [V4.0 信任链] 开始追踪: Douglas Hanahan (Ludwig Institute for Cancer Research, Lausanne Branch, 1011 Lausanne, Switzerland; Swiss Institute for Experimental Cancer Research (ISREC) at EPFL, 1011 Lausanne, Switzerland; Swiss Cancer Center Leman (SCCL), Rue du Bugnon 25A, 1011 Lausanne, Switzerland; Agora Translational Cancer Research Center, 1011 Lausanne, Switzerland) [角色: corresponding]
+  📋 [Layer2] Crossref 元数据邮箱: douglas.hanahan@epfl.ch
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 110)
+  📧 通讯: HIT douglas.hanahan@epfl.ch [置信度: 高]
+
+  📧 [V4.0 信任链] 开始追踪: Douglas Hanahan (Ludwig Institute for Cancer Research, Lausanne Branch, 1011 Lausanne, Switzerland; Swiss Institute for Experimental Cancer Research (ISREC) at EPFL, 1011 Lausanne, Switzerland; Swiss Cancer Center Leman (SCCL), Rue du Bugnon 25A, 1011 Lausanne, Switzerland; Agora Translational Cancer Research Center, 1011 Lausanne, Switzerland) [角色: 一作]
+  📋 [Layer2] Crossref 元数据邮箱: douglas.hanahan@epfl.ch
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 110)
+  📧 一作: HIT douglas.hanahan@epfl.ch [置信度: 高]
+
+============================================================
+[9/10] 10.1016/j.cell.2025.04.010
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.04.010
+  📡 [EuropePMC] 查询 EuropePMC API...
+  📧 [EuropePMC] 从机构字段提取到邮箱: huhailan@zju.edu.cn (Hailan Hu)
+  ✅ EuropePMC 命中，标题: Neuron-astrocyte coupling in lateral habenula mediates depre
+  📋 作者识别完成:
+     第一作者: Qianqian Xin (Department of Neurobiology, Affiliated Mental Health Center & Hangzhou Seventh People's Hospital, Zhejiang University School of Medicine, Hangzhou 310058, China; Nanhu Brain-Computer Interface Institute, Liangzhu Laboratory, MOE Frontier Science Center for Brain Science and Brain-Machine Integration, State Key Laboratory of Brain-Machine Intelligence, New Cornerstone Science Laboratory, Zhejiang University, Hangzhou 311121, China)
+     通讯作者: Hailan Hu (Department of Neurobiology, Affiliated Mental Health Center & Hangzhou Seventh People's Hospital, Zhejiang University School of Medicine, Hangzhou 310058, China; Nanhu Brain-Computer Interface Institute, Liangzhu Laboratory, MOE Frontier Science Center for Brain Science and Brain-Machine Integration, State Key Laboratory of Brain-Machine Intelligence, New Cornerstone Science Laboratory, Zhejiang University, Hangzhou 311121, China; Department of Psychiatry and International Institutes of Medicine, The Fourth Affiliated Hospital, Zhejiang University School of Medicine, Yiwu 322000, China)
+  📄 标题: Neuron-astrocyte coupling in lateral habenula mediates depre
+  👤 一作: Qianqian Xin | 机构: Department of Neurobiology, Affiliated M
+  👤 通讯: Hailan Hu | 机构: Department of Neurobiology, Affiliated M
+
+  📧 [V4.0 信任链] 开始追踪: Hailan Hu (Department of Neurobiology, Affiliated Mental Health Center & Hangzhou Seventh People's Hospital, Zhejiang University School of Medicine, Hangzhou 310058, China; Nanhu Brain-Computer Interface Institute, Liangzhu Laboratory, MOE Frontier Science Center for Brain Science and Brain-Machine Integration, State Key Laboratory of Brain-Machine Intelligence, New Cornerstone Science Laboratory, Zhejiang University, Hangzhou 311121, China; Department of Psychiatry and International Institutes of Medicine, The Fourth Affiliated Hospital, Zhejiang University School of Medicine, Yiwu 322000, China) [角色: corresponding]
+  📋 [Layer2] Crossref 元数据邮箱: huhailan@zju.edu.cn
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 100)
+    💾 缓存机构域名: department of neurobiology, af... → zju.edu.cn
+  📧 通讯: HIT huhailan@zju.edu.cn [置信度: 高]
+
+  📧 [V4.0 信任链] 开始追踪: Qianqian Xin (Department of Neurobiology, Affiliated Mental Health Center & Hangzhou Seventh People's Hospital, Zhejiang University School of Medicine, Hangzhou 310058, China; Nanhu Brain-Computer Interface Institute, Liangzhu Laboratory, MOE Frontier Science Center for Brain Science and Brain-Machine Integration, State Key Laboratory of Brain-Machine Intelligence, New Cornerstone Science Laboratory, Zhejiang University, Hangzhou 311121, China) [角色: 一作]
+  🎯 [Layer3] 论文页面抓取 (doi.org/10.1016/j.cell.2025.04.010)...
+  🔄 [Layer5] 同机构推断（利用通讯作者信息）...
+  🧭 [Layer6] LLM 两阶段搜索...
+    🧭 [Phase1] LLM 导航模式 - 搜索含邮箱的页面 URL...
+    ⚠️ [Phase1] LLM 未返回有效 URL
+    🔄 [Phase2] Phase1 未命中，启动直搜兜底模式...
+    ⚠️ [Phase2] LLM 回答未找到或为空
+  ❌ 所有层级均未找到可信邮箱
+  📧 一作: MISS 未找到 [置信度: 无]
+
+============================================================
+[10/10] 10.1016/j.cell.2025.05.041
+============================================================
+
+🔬 [DOI解析] 开始解析: 10.1016/j.cell.2025.05.041
+  📡 [EuropePMC] 查询 EuropePMC API...
+  📧 [EuropePMC] 从机构字段提取到邮箱: yifei.miao@ioz.ac.cn (Yifei Miao)
+  📧 [EuropePMC] 从机构字段提取到邮箱: minzhe.guo@cchmc.org (Minzhe Guo)
+  📧 [EuropePMC] 从机构字段提取到邮箱: mgu@mednet.ucla.edu (Mingxia Gu)
+  ✅ EuropePMC 命中，标题: Co-development of mesoderm and endoderm enables organotypic 
+  ⚠️ 发现超大型协作论文（30 位作者），启动智能通讯作者识别...
+  📋 作者识别完成:
+     第一作者: Yifei Miao (Division of Pulmonary Biology, Perinatal Institute, Cincinnati Children's Hospital Medical Center (CCHMC), Department of Pediatrics, University of Cincinnati College of Medicine, Cincinnati, OH 45229, USA; Center for Stem Cell and Organoid Medicine (CuSTOM), CCHMC, Department of Pediatrics, University of Cincinnati, College of Medicine, Cincinnati, OH 45229, USA; Division of Developmental Biology, CCHMC, Department of Pediatrics, University of Cincinnati, College of Medicine, Cincinnati, OH 45229, USA)
+     通讯作者: Yifei Miao (Division of Pulmonary Biology, Perinatal Institute, Cincinnati Children's Hospital Medical Center (CCHMC), Department of Pediatrics, University of Cincinnati College of Medicine, Cincinnati, OH 45229, USA; Center for Stem Cell and Organoid Medicine (CuSTOM), CCHMC, Department of Pediatrics, University of Cincinnati, College of Medicine, Cincinnati, OH 45229, USA; Division of Developmental Biology, CCHMC, Department of Pediatrics, University of Cincinnati, College of Medicine, Cincinnati, OH 45229, USA)
+  📄 标题: Co-development of mesoderm and endoderm enables organotypic 
+  👤 一作: Yifei Miao | 机构: Division of Pulmonary Biology, Perinatal
+  👤 通讯: Yifei Miao | 机构: Division of Pulmonary Biology, Perinatal
+
+  📧 [V4.0 信任链] 开始追踪: Yifei Miao (Division of Pulmonary Biology, Perinatal Institute, Cincinnati Children's Hospital Medical Center (CCHMC), Department of Pediatrics, University of Cincinnati College of Medicine, Cincinnati, OH 45229, USA; Center for Stem Cell and Organoid Medicine (CuSTOM), CCHMC, Department of Pediatrics, University of Cincinnati, College of Medicine, Cincinnati, OH 45229, USA; Division of Developmental Biology, CCHMC, Department of Pediatrics, University of Cincinnati, College of Medicine, Cincinnati, OH 45229, USA) [角色: corresponding]
+  📋 [Layer2] Crossref 元数据邮箱: yifei.miao@ioz.ac.cn
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 100)
+    💾 缓存机构域名: division of pulmonary biology,... → ioz.ac.cn
+  📧 通讯: HIT yifei.miao@ioz.ac.cn [置信度: 高]
+
+  📧 [V4.0 信任链] 开始追踪: Yifei Miao (Division of Pulmonary Biology, Perinatal Institute, Cincinnati Children's Hospital Medical Center (CCHMC), Department of Pediatrics, University of Cincinnati College of Medicine, Cincinnati, OH 45229, USA; Center for Stem Cell and Organoid Medicine (CuSTOM), CCHMC, Department of Pediatrics, University of Cincinnati, College of Medicine, Cincinnati, OH 45229, USA; Division of Developmental Biology, CCHMC, Department of Pediatrics, University of Cincinnati, College of Medicine, Cincinnati, OH 45229, USA) [角色: 一作]
+  📋 [Layer2] Crossref 元数据邮箱: yifei.miao@ioz.ac.cn
+  ✅ [Layer2] Crossref 邮箱验证通过 (得分: 110)
+    💾 缓存机构域名: division of pulmonary biology,... → ioz.ac.cn
+  📧 一作: HIT yifei.miao@ioz.ac.cn [置信度: 高]
+
+============================================================
+汇总结果
+============================================================
+通讯作者命中: 10/10 (高置信度: 10/10)
+第一作者命中: 4/10 (高置信度: 4/10)
+
+  025.11.002 | 通讯: HIT(高) thirumala-devi.kanneganti@stju | 一作: MISS(无) 未找到
+  025.09.029 | 通讯: HIT(高) zhang.chenping@hotmail.com | 一作: MISS(无) 未找到
+  025.06.047 | 通讯: HIT(高) doctoryjy@scu.edu.cn | 一作: MISS(无) 未找到
+  025.05.021 | 通讯: HIT(高) qujing@ioz.ac.cn | 一作: MISS(无) 未找到
+  025.06.001 | 通讯: HIT(高) wangsi@xwh.ccmu.edu.cn | 一作: MISS(无) 未找到
+  025.03.011 | 通讯: HIT(高) kroemer@orange.fr | 一作: HIT(高) kroemer@orange.fr
+  025.04.032 | 通讯: HIT(高) bo.li@ucla.edu | 一作: HIT(高) bo.li@ucla.edu
+  025.12.049 | 通讯: HIT(高) douglas.hanahan@epfl.ch | 一作: HIT(高) douglas.hanahan@epfl.ch
+  025.04.010 | 通讯: HIT(高) huhailan@zju.edu.cn | 一作: MISS(无) 未找到
+  025.05.041 | 通讯: HIT(高) yifei.miao@ioz.ac.cn | 一作: HIT(高) yifei.miao@ioz.ac.cn

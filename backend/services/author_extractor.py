@@ -30,6 +30,7 @@ def extract_authors(paper_metadata: dict) -> dict:
     first_org = ", ".join(first.get("affiliations", [])) or "未找到"
     first_homepage = first.get("homepage", "")
     first_orcid = first.get("orcid", "")
+    first_email = first.get("email", "")
     
     # 通讯作者识别策略分支
     if len(authors) > 20:
@@ -41,7 +42,8 @@ def extract_authors(paper_metadata: dict) -> dict:
         corr = _identify_corresponding_normal(authors)
     
     result = {
-        "第一作者": {"姓名": first_name, "机构": first_org, "主页": first_homepage, "orcid": first_orcid},
+        "第一作者": {"姓名": first_name, "机构": first_org, "主页": first_homepage,
+                    "orcid": first_orcid, "crossref_email": first_email},
         "通讯作者": corr
     }
     
@@ -61,7 +63,8 @@ def _identify_corresponding_normal(authors: list) -> dict:
                 "姓名": a.get("name", "未找到"),
                 "机构": ", ".join(a.get("affiliations", [])) or "未找到",
                 "主页": a.get("homepage", ""),
-                "orcid": a.get("orcid", "")
+                "orcid": a.get("orcid", ""),
+                "crossref_email": a.get("email", "")  # 新增
             }
     # 默认取最后一个（学术界惯例）
     last = authors[-1]
@@ -69,7 +72,8 @@ def _identify_corresponding_normal(authors: list) -> dict:
         "姓名": last.get("name", "未找到"),
         "机构": ", ".join(last.get("affiliations", [])) or "未找到",
         "主页": last.get("homepage", ""),
-        "orcid": last.get("orcid", "")
+        "orcid": last.get("orcid", ""),
+        "crossref_email": last.get("email", "")  # 新增
     }
 
 
@@ -85,7 +89,8 @@ def _identify_corresponding_large_paper(paper_metadata: dict, authors: list) -> 
             return {
                 "姓名": a.get("name", "未找到"),
                 "机构": ", ".join(a.get("affiliations", [])) or "未找到",
-                "orcid": a.get("orcid", "")
+                "orcid": a.get("orcid", ""),
+                "crossref_email": a.get("email", "")  # 新增
             }
     
     # 策略 2: 用 LLM 分析（只传前5个和后5个作者，避免 token 爆炸）
@@ -121,6 +126,7 @@ def _identify_corresponding_large_paper(paper_metadata: dict, authors: list) -> 
         text_resp = text_resp.replace('```json', '').replace('```', '').strip()
         result = json.loads(text_resp)
         if result.get("姓名"):
+            result["crossref_email"] = ""  # LLM 分析无法提供 email
             return result
     except Exception as e:
         print(f"  ⚠️ LLM 通讯作者识别失败: {e}")
@@ -130,6 +136,7 @@ def _identify_corresponding_large_paper(paper_metadata: dict, authors: list) -> 
     return {
         "姓名": fallback.get("name", "未找到"),
         "机构": ", ".join(fallback.get("affiliations", [])) or "未找到",
-        "orcid": fallback.get("orcid", "")
+        "orcid": fallback.get("orcid", ""),
+        "crossref_email": fallback.get("email", "")  # 新增
     }
 

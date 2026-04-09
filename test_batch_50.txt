@@ -1,0 +1,64 @@
+import os, sys, csv, asyncio
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from backend.services.doi_resolver import resolve_doi
+from backend.services.author_extractor import extract_authors
+from backend.services.email_finder import find_email_for_paper
+
+csv_path = r"c:\Users\M\Desktop\skills\csv-CellJourna-set.csv"
+DOIS = []
+with open(csv_path, 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    for i, row in enumerate(reader):
+        if i >= 50: break
+        if row.get('DOI'): DOIS.append(row['DOI'])
+
+print(f"Loaded {len(DOIS)} DOIs from Cell dataset.")
+
+results = []
+for i, doi in enumerate(DOIS, 1):
+    meta = resolve_doi(doi)
+    title = meta.get('title', '未知')
+    author_data = extract_authors(meta)
+    fn = author_data.get('第一作者', {}).get('姓名', '?')
+    fo = author_data.get('第一作者', {}).get('机构', '?')
+    fh = author_data.get('第一作者', {}).get('主页', '')
+    ln = author_data.get('通讯作者', {}).get('姓名', '?')
+    lo = author_data.get('通讯作者', {}).get('机构', '?')
+    lh = author_data.get('通讯作者', {}).get('主页', '')
+    
+    ce, cc, ch = '未找到', '无', 'MISS'
+    corr_result = {}
+    if ln and ln not in ['未找到', '?']:
+        corr = author_data.get('通讯作者', {})
+        corr_result = find_email_for_paper(doi, ln, lo, '通讯', lh, title, corr.get('orcid', ''), corr.get('crossref_email', ''))
+        ce = corr_result.get('邮箱', '未找到')
+        cc = corr_result.get('置信度', '无')
+        ch = 'HIT' if ce != '未找到' else 'MISS'
+        
+    fe, fc, fhit = '未找到', '无', 'MISS'
+    if fn and fn not in ['未找到', '?']:
+        first = author_data.get('第一作者', {})
+        first_result = find_email_for_paper(doi, fn, fo, '一作', fh, title, first.get('orcid', ''), first.get('crossref_email', ''), corr_result)
+        fe = first_result.get('邮箱', '未找到')
+        fc = first_result.get('置信度', '无')
+        fhit = 'HIT' if fe != '未找到' else 'MISS'
+        
+    results.append({'doi': doi, 'corr_hit': ch, 'corr_conf': cc, 'first_hit': fhit, 'first_conf': fc})
+    msg = f"[{i}/{len(DOIS)}] {doi} -> 通讯: {ch}({cc}) {ln} | 一作: {fhit}({fc}) {fn}"
+    print(msg)
+    
+    # 汇总写入
+    with open('test_50_log.txt', 'w', encoding='utf-8') as log_f:
+        c_hits = sum(1 for r in results if r['corr_hit'] == 'HIT')
+        f_hits = sum(1 for r in results if r['first_hit'] == 'HIT')
+        c_high = sum(1 for r in results if r['corr_conf'] == '高')
+        f_high = sum(1 for r in results if r['first_conf'] == '高')
+        
+        log_f.write(f"Processed: {i}/{len(DOIS)}\n")
+        log_f.write(f"通讯命中总览: {c_hits}/{i} (高置信: {c_high})\n")
+        log_f.write(f"一作命中总览: {f_hits}/{i} (高置信: {f_high})\n")
+        log_f.write("-" * 30 + "\n")
+        for r in results:
+            log_f.write(f"{r['doi']} | 通讯:{r['corr_hit']} | 一作:{r['first_hit']}\n")
+
+print("\n--- DONE ---")

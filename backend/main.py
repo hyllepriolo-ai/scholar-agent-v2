@@ -16,8 +16,8 @@ from fastapi import FastAPI, UploadFile, File, Form, Request
 from fastapi.responses import HTMLResponse, FileResponse, StreamingResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-# 确保 backend 包可导入
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# 确保 backend 包可导入（项目根目录）
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from backend.services.document_parser import parse_user_input, extract_dois_from_text
 from backend.services.doi_resolver import resolve_doi
@@ -112,11 +112,15 @@ async def extract_from_input(
                 corr_name = corr_author.get("姓名", "")
                 corr_org = corr_author.get("机构", "")
                 corr_homepage = corr_author.get("主页", "")
-                corr_email_data = {"邮箱": "未找到", "主页": "未找到", "谷歌学术": "未找到"}
+                corr_email_data = {"邮箱": "未找到", "主页": "未找到", "来源": "none",
+                                   "来源URL": "", "置信度": "无", "置信分": 0}
                 if corr_name and corr_name != "未找到":
                     corr_email_data = await asyncio.to_thread(
                         find_email_for_paper, doi, corr_name, corr_org, "通讯",
-                        corr_homepage, title
+                        corr_homepage, title,
+                        corr_author.get("orcid", ""),            # 传入 ORCID
+                        corr_author.get("crossref_email", ""),    # 传入 Crossref 邮箱
+                        None                                      # 通讯没有 corr_result
                     )
                 
                 # 5. 搜索邮箱——第一作者（传入 homepage + paper_title 增强搜索）
@@ -126,11 +130,15 @@ async def extract_from_input(
                 first_name = first_author.get("姓名", "")
                 first_org = first_author.get("机构", "")
                 first_homepage = first_author.get("主页", "")
-                first_email_data = {"邮箱": "未找到", "主页": "未找到", "谷歌学术": "未找到"}
+                first_email_data = {"邮箱": "未找到", "主页": "未找到", "来源": "none",
+                                    "来源URL": "", "置信度": "无", "置信分": 0}
                 if first_name and first_name != "未找到":
                     first_email_data = await asyncio.to_thread(
                         find_email_for_paper, doi, first_name, first_org, "一作",
-                        first_homepage, title
+                        first_homepage, title,
+                        first_author.get("orcid", ""),            # 传入 ORCID
+                        first_author.get("crossref_email", ""),    # 传入 Crossref 邮箱
+                        corr_email_data                            # 传入通讯结果！
                     )
                 
                 # 组装该 DOI 的结果
